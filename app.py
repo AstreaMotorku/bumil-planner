@@ -179,7 +179,7 @@ with tabs[1]:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tabs[2]:
-    st.markdown("### ⚖️ BB Ibu & Janin Tracker — Persis V2 Super Detail")
+    st.markdown("### ⚖️ BB Ibu & Janin Tracker")
     col_ibu, col_janin = st.columns(2, gap="large")
     with col_ibu:
         st.markdown('<div class="custom-card">', unsafe_allow_html=True)
