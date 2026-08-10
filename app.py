@@ -271,7 +271,38 @@ with tabs[3]:
                 save_all(); st.rerun()
 
 with tabs[4]:
-    st.markdown("#### 👶 Newborn List")
+    st.markdown("#### 👶 Newborn List - Checklist Belanja Bayi")
+    st.caption("Tambah item baru di tiap kategori, isi harga & link Shopee, centang kalau sudah beli. Total otomatis kehitung & tersimpan di Cloud.")
+
+    # Quick template button
+    with st.expander("📦 Load Template Lengkap (V2 Super Detail) - Klik untuk isi otomatis", expanded=False):
+        st.write("Kalau list kamu kosong, klik ini untuk load template lengkap biar gak ketik satu-satu")
+        if st.button("✨ Load Template 15 Item Lengkap"):
+            data["newborn"] = {
+                "WAJIB PUNYA": [
+                    {"nama": "Popok kain 12pcs + Perlak 2 lembar", "qty": 1, "harga": 0, "link": "", "ket": "Katun lembut, perlak waterproof", "done": False},
+                    {"nama": "Popok sekali pakai NB 1 pack", "qty": 1, "harga": 0, "link": "", "ket": "MamyPoko / Sweety NB", "done": False},
+                    {"nama": "Baju pendek 6 stel + panjang 4 stel", "qty": 1, "harga": 0, "link": "", "ket": "Katun bambu 0-3 bulan", "done": False},
+                    {"nama": "Bedong kain 6 pcs + Topi kupluk 3 pcs", "qty": 1, "harga": 0, "link": "", "ket": "120x120cm", "done": False},
+                    {"nama": "Handuk bayi 2 + Washlap 6 + Bak mandi lipat", "qty": 1, "harga": 0, "link": "", "ket": "Handuk lembut", "done": False},
+                    {"nama": "Sabun 2in1 + Minyak telon + Cream ruam + Tisu basah", "qty": 1, "harga": 0, "link": "", "ket": "Zwitsal / Bambi / Cussons", "done": False},
+                ],
+                "LUMAYAN PENTING": [
+                    {"nama": "Pompa ASI elektrik + Cooler bag", "qty": 1, "harga": 0, "link": "", "ket": "Spectra / MomUung", "done": False},
+                    {"nama": "Sterilizer UV + Botol kaca 2 pcs", "qty": 1, "harga": 0, "link": "", "ket": "UV sterilizer", "done": False},
+                    {"nama": "Bouncer + Diaper bag", "qty": 1, "harga": 0, "link": "", "ket": "Bouncer bayi", "done": False},
+                    {"nama": "Gendongan SSC (CuddleMe / Ergobaby)", "qty": 1, "harga": 0, "link": "", "ket": "Gendongan depan", "done": False},
+                ],
+                "TIDAK URGENT": [
+                    {"nama": "Sepatu bayi + Baju jalan 2 stel", "qty": 1, "harga": 0, "link": "", "ket": "Untuk jalan", "done": False},
+                    {"nama": "Stroller cabin + Car seat", "qty": 1, "harga": 0, "link": "", "ket": "Bisa nanti", "done": False},
+                    {"nama": "Baby box / Kasur bayi + Kelambu", "qty": 1, "harga": 0, "link": "", "ket": "", "done": False},
+                ]
+            }
+            save_all()
+            st.success("Template loaded! Refresh halaman.")
+            st.rerun()
+
     cols = st.columns(3)
     for col_idx, kat in enumerate(["WAJIB PUNYA", "LUMAYAN PENTING", "TIDAK URGENT"]):
         with cols[col_idx]:
@@ -280,15 +311,46 @@ with tabs[4]:
             for i, item in enumerate(data["newborn"][kat]):
                 with st.container(border=True):
                     item["done"] = st.checkbox(item["nama"], value=item["done"], key=f"{kat}_{i}_done_nb")
-                    item["qty"] = st.number_input("Qty", 1, 100, item["qty"], key=f"{kat}_{i}_qty_nb")
-                    item["harga"] = st.number_input("Harga Rp", 0, 10000000, item["harga"], key=f"{kat}_{i}_harga_nb")
-                    item["link"] = st.text_input("Link", value=item["link"], key=f"{kat}_{i}_link_nb", placeholder="Shopee")
-                    if item["link"]: st.link_button("Buka", item["link"])
+                    st.caption(item.get("ket",""))
+                    c_qty, c_harga = st.columns(2)
+                    item["qty"] = c_qty.number_input("Qty", 1, 100, item["qty"], key=f"{kat}_{i}_qty_nb")
+                    item["harga"] = c_harga.number_input("Harga Rp", 0, 10000000, item["harga"], key=f"{kat}_{i}_harga_nb")
+                    item["link"] = st.text_input("Link Shopee", value=item["link"], key=f"{kat}_{i}_link_nb", placeholder="https://shopee.co.id/...")
+                    if item["link"]: 
+                        st.link_button("🔗 Buka Link", item["link"])
                     if st.button("✕ Hapus", key=f"del_{kat}_{i}_nb"):
                         data["newborn"][kat].pop(i); save_all(); st.rerun()
                     total += item["harga"]*item["qty"]
             st.metric(f"Total {kat}", f"Rp {total:,}")
-    if st.button("💾 Simpan Newborn"): save_all()
+            
+            # FORM TAMBAH ITEM - INI YANG KEMARIN HILANG
+            with st.expander(f"➕ Tambah Item {kat}", expanded=False):
+                new_nama = st.text_input("Nama barang", key=f"new_nama_{kat}", placeholder="Contoh: Bedong 3 pcs")
+                new_ket = st.text_input("Keterangan", key=f"new_ket_{kat}", placeholder="Bahan katun, ukuran 120x120")
+                c1,c2 = st.columns(2)
+                new_qty = c1.number_input("Qty", 1, 100, 1, key=f"new_qty_{kat}")
+                new_harga = c2.number_input("Harga satuan Rp", 0, 10000000, 0, key=f"new_harga_{kat}")
+                new_link = st.text_input("Link Shopee (opsional)", key=f"new_link_{kat}", placeholder="https://shopee...")
+                if st.button(f"✅ Tambah ke {kat}", key=f"add_{kat}", use_container_width=True):
+                    if new_nama.strip():
+                        data["newborn"][kat].append({"nama": new_nama.strip(), "qty": new_qty, "harga": new_harga, "link": new_link.strip(), "ket": new_ket.strip(), "done": False})
+                        save_all()
+                        st.success(f"✅ {new_nama} ditambahkan!")
+                        st.rerun()
+                    else:
+                        st.warning("Nama barang harus diisi!")
+
+    st.divider()
+    col_save, col_total = st.columns([1,2])
+    if col_save.button("💾 Simpan Semua Newborn ke Cloud", use_container_width=True):
+        save_all()
+        st.success("Tersimpan!")
+    # Grand total
+    grand_total = 0
+    for kat in ["WAJIB PUNYA", "LUMAYAN PENTING", "TIDAK URGENT"]:
+        for item in data["newborn"][kat]:
+            grand_total += item["harga"]*item["qty"]
+    col_total.metric("💰 Grand Total Semua Perlengkapan", f"Rp {grand_total:,}")
 
 with tabs[5]:
     st.markdown('<div class="custom-card">', unsafe_allow_html=True)
