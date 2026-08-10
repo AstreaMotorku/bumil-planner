@@ -365,6 +365,40 @@ with tabs[6]:
     st.markdown("#### 💊 Vitamin & Nutrisi Super Detail — Versi Lengkap Informatif")
     st.markdown('<div class="disclaimer-box">💡 <b>Info umum edukasi, bukan resep pribadi.</b> Dosis personal tetap konsul dokter. Hindari Vitamin A >10.000 IU, ibuprofen tanpa resep, dan jamu tidak jelas.</div>', unsafe_allow_html=True)
     st.write("")
+    st.markdown("##### 🍽️ MAKANAN WAJIB PER TRIMESTER")
+    m1, m2, m3 = st.columns(3)
+    with m1:
+        st.markdown("""
+        <div style="background:#F3F7F4; border-radius:18px; padding:16px; border:1px solid #D9E4DD;">
+        <b>T1 Mual & Pembentukan Organ</b><br><br>
+        - <b>Folat tinggi:</b> bayam, brokoli, alpukat<br>
+        - <b>Protein ringan:</b> telur, ayam, tempe<br>
+        - <b>Anti mual:</b> jahe, pisang, biskuit<br>
+        - <b>Porsi:</b> 5-6x kecil
+        </div>
+        """, unsafe_allow_html=True)
+    with m2:
+        st.markdown("""
+        <div style="background:#FFF6F5; border-radius:18px; padding:16px; border:1px solid #F7D6D0;">
+        <b>T2 Pertumbuhan Cepat</b><br><br>
+        - <b>Kalsium 1000mg:</b> susu 2x250ml, yogurt, teri<br>
+        - <b>Fe+Vit C:</b> daging sapi 2x/mgg, hati ayam MAX 1x/mgg + jeruk<br>
+        - <b>DHA:</b> salmon/lele 2x/mgg<br>
+        - <b>Serat:</b> pepaya matang, air 2.5L
+        </div>
+        """, unsafe_allow_html=True)
+    with m3:
+        st.markdown("""
+        <div style="background:#FFFCF8; border-radius:18px; padding:16px; border:1px solid #F0E6D8;">
+        <b>T3 Persiapan Lahiran & ASI</b><br><br>
+        - <b>Energi:</b> nasi merah, kurma 3-5 butir 36w+<br>
+        - <b>Protein</b><br>
+        - <b>Anti bengkak:</b> sayur hijau 2 mangkok, buah naga, air kelapa<br>
+        - <b>Persiapan ASI:</b> daun katuk, almond 10 butir
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.write("")
     st.markdown("##### 📋 Daftar Vitamin & Suplemen Wajib Per Trimester")
     v1,v2,v3 = st.columns(3)
     with v1:
