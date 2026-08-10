@@ -179,7 +179,7 @@ with tabs[1]:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tabs[2]:
-    st.markdown("### ⚖️ BB Ibu & Janin Tracker")
+    st.markdown("### ⚖️ BB Ibu & Janin Tracker — Persis V2 Super Detail")
     col_ibu, col_janin = st.columns(2, gap="large")
     with col_ibu:
         st.markdown('<div class="custom-card">', unsafe_allow_html=True)
@@ -362,42 +362,205 @@ with tabs[5]:
 
 with tabs[6]:
     st.markdown('<div class="custom-card">', unsafe_allow_html=True)
-    st.markdown("#### 💊 Vitamin & Nutrisi Super Detail")
-    st.markdown('<div class="disclaimer-box">💡 Info umum, bukan resep pribadi. Konsul dokter.</div>', unsafe_allow_html=True)
-    v1,v2 = st.columns(2)
+    st.markdown("#### 💊 Vitamin & Nutrisi Super Detail — Versi Lengkap Informatif")
+    st.markdown('<div class="disclaimer-box">💡 <b>Info umum edukasi, bukan resep pribadi.</b> Dosis personal tetap konsul dokter. Hindari Vitamin A >10.000 IU, ibuprofen tanpa resep, dan jamu tidak jelas.</div>', unsafe_allow_html=True)
+    st.write("")
+    st.markdown("##### 📋 Daftar Vitamin & Suplemen Wajib Per Trimester")
+    v1,v2,v3 = st.columns(3)
     with v1:
-        st.markdown("**🌿 WAJIB**\n- Protein 60-80gr: telur matang, ayam, lele/salmon, tempe\n- Zat Besi+Vit C: hati ayam 1x/mgg max, daging merah, bayam+jeruk\n- Kalsium 1000mg: susu hamil 2 gelas\n- Serat: pepaya matang, pisang, oat\n- Air 2.3-2.5L")
+        st.markdown("""
+        <div style="background:#F3F7F4; border-radius:18px; padding:16px; border:1px solid #D9E4DD;">
+        <b>🌱 T1 (0-13 minggu) - Pembentukan Organ</b><br><br>
+        <b>1. Asam Folat 400-800mcg</b><br>
+        <small><b>Waktu:</b> Pagi setelah makan<br><b>Manfaat:</b> Cegah cacat tabung saraf (spina bifida)<br><b>Makanan:</b> Bayam, brokoli, alpukat, kacang merah<br><b>Catatan:</b> WAJIB sejak program hamil</small><br><br>
+        <b>2. Vitamin D 600 IU</b><br>
+        <small><b>Waktu:</b> Pagi bersama lemak<br><b>Manfaat:</b> Penyerapan kalsium, tulang, imun</small><br><br>
+        <b>3. Vitamin B6 10-25mg 3x/hari (jika mual berat)</b><br>
+        <small><b>Manfaat:</b> Kurangi mual muntah</small><br><br>
+        <b>❌ HINDARI T1:</b> Vit A >10.000 IU, Ibuprofen, retinol, jamu peluntur
+        </div>
+        """, unsafe_allow_html=True)
     with v2:
-        st.markdown("**⛔ Hindari**\n- Sushi mentah, daging/telur setengah matang\n- Susu mentah, keju lunak tidak pasteurisasi\n- Ikan merkuri tinggi: Hiu, Todak, King Mackerel\n- Kafein >200mg, Alkohol 0, Rokok 0\n- Jamu tidak jelas")
+        st.markdown("""
+        <div style="background:#FFF6F5; border-radius:18px; padding:16px; border:1px solid #F7D6D0;">
+        <b>🌸 T2 (14-27 minggu) - Pertumbuhan Cepat</b><br><br>
+        <b>2. Kalsium 1000mg/hari</b><br>
+        <small><b>Waktu:</b> Malam, JAUH dari Fe 2-3 jam<br><b>Manfaat:</b> Gigi & tulang bayi, cegah kram & preeklamsia<br><b>Makanan:</b> Susu hamil 2 gelas, yogurt, cheddar pasteurisasi</small><br><br>
+        <b>3. Zat Besi 27mg/hari</b><br>
+        <small><b>Waktu:</b> Malam + Vit C (jeruk)<br><b>Manfaat:</b> Cegah anemia<br><b>Jangan bareng:</b> Susu, kopi, teh</small><br><br>
+        <b>4. DHA 200-300mg/hari</b><br>
+        <small><b>Waktu:</b> Siang setelah makan<br><b>Manfaat:</b> Otak, mata, saraf janin<br><b>Makanan:</b> Salmon, lele, kembung rendah merkuri</small><br><br>
+        <b>5. Magnesium 300mg (jika kram)</b><br>
+        <small>Malam, relaksasi otot, bantu tidur</small>
+        </div>
+        """, unsafe_allow_html=True)
+    with v3:
+        st.markdown("""
+        <div style="background:#FFFCF8; border-radius:18px; padding:16px; border:1px solid #F0E6D8;">
+        <b>🌙 T3 (28-40 minggu) - Persiapan Lahiran</b><br><br>
+        <b>1. Lanjut Fe + Ca + DHA + Vit D</b><br>
+        <small>Kebutuhan puncak, Hb target >11</small><br><br>
+        <b>2. Vitamin K (36+ minggu jika saran dokter)</b><br>
+        <small><b>Manfaat:</b> Pembekuan darah, cegah perdarahan lahir<br><b>Makanan:</b> Bayam, brokoli, alpukat</small><br><br>
+        <b>3. Magnesium Lanjut</b><br>
+        <small>Kurangi kontraksi palsu, kram, bantu tidur</small><br><br>
+        <b>4. Probiotik & Laktasi</b><br>
+        <small>Yogurt plain, tempe, untuk pencernaan & persiapan ASI</small><br><br>
+        <b>Catatan:</b> Minum Fe sampai 3 bulan nifas
+        </div>
+        """, unsafe_allow_html=True)
     st.divider()
-    t1,t2,t3 = st.columns(3)
-    with t1: st.markdown('<div class="custom-card" style="background:#F3F7F4"><b>T1 (0-13)</b><br><small>Folat 400-800mcg pagi<br>Vit D 600 IU<br>B6 jika mual (resep dr)</small></div>', unsafe_allow_html=True)
-    with t2: st.markdown('<div class="custom-card" style="background:#FFF6F5"><b>T2 (14-27)</b><br><small>Ca 1000mg malam<br>Fe 27mg malam+Vit C<br>DHA 200-300mg siang</small></div>', unsafe_allow_html=True)
-    with t3: st.markdown('<div class="custom-card" style="background:#FFFCF8"><b>T3 (28-40)</b><br><small>Lanjut Fe+Ca+DHA<br>Vit K akhir jika saran<br>Mg untuk tidur</small></div>', unsafe_allow_html=True)
+    st.markdown("##### 🥗 Makanan WAJIB - Detail")
+    w1,w2 = st.columns(2)
+    with w1:
+        st.markdown("""
+        **1. Protein 60-80gr/hari**\n- Kenapa: Otot, otak, plasenta, air ketuban\n- Porsi: 3-4 porsi (1 telur + 50gr ayam/ikan + 100gr tempe)\n- Menu: Pagi telur 2 + susu, Siang ayam 100gr + tempe 100gr, Malam ikan lele/salmon 100gr + tahu\n\n**2. Zat Besi + Folat + Vit C**\n- Fe heme: Daging sapi 1-2x/mgg, hati ayam 1x/mgg MAX 50gr\n- Non-heme: Bayam, kacang merah, alpukat, brokoli\n- Wajib + Vit C: Jeruk, jambu, kiwi biar serap 2-3x\n- Jangan bareng susu/kopi/teh/kalsium\n\n**3. Kalsium 1000mg/hari**\n- Porsi: 3-4 porsi (1 gelas susu 250ml = 300mg)\n- Menu: Pagi susu hamil 250ml, Snack yogurt 100gr, Malam cheddar / teri 50gr
+        """)
+    with w2:
+        st.markdown("""
+        **4. Serat 25-30gr + Air 2.3-2.5L**\n- Sumber: Pepaya MATANG 100gr, pisang, apel, oat 30gr, sayur 5 porsi\n- Air: 8-10 gelas, bawa botol\n\n**5. Lemak Sehat DHA & Kolin**\n- Sumber: Salmon, lele, kembung 2x/mgg, telur omega-3 1/hari, alpukat 1/2, almond 10 butir\n- Kolin: Kuning telur, kedelai\n\n**6. Karbo Kompleks & Probiotik**\n- Karbo: Nasi merah, kentang, ubi, oat — butuh energi lahiran\n- Probiotik: Yogurt plain, tempe, kimchi halal
+        """)
+    st.divider()
+    st.markdown("##### ⛔ Makanan HINDARI / BATASI - Risiko & Alternatif Aman")
+    h1,h2 = st.columns(2)
+    with h1:
+        st.markdown("""
+        **1. Sushi mentah, sashimi, kerang mentah**\n- Risiko: Anisakis, Listeria → keguguran, prematur\n- Alternatif: Sushi matang tempura, salmon panggang >63°C\n\n**2. Daging, ayam, telur setengah matang**\n- Risiko: Toksoplasma, Salmonella\n- Aman: Tidak ada pink, suhu >75°C\n\n**3. Susu mentah & keju lunak tidak pasteurisasi**\n- Risiko: Listeria\n- Cek: Harus ada pasteurized / UHT\n\n**4. Ikan merkuri tinggi: Hiu, Todak, King Mackerel, Tuna Bigeye**\n- Risiko: Merkuri rusak saraf & otak janin\n- Aman: Lele, salmon, kembung, nila, udang 200-300gr/mgg
+        """)
+    with h2:
+        st.markdown("""
+        **5. Kafein >200mg (~1 kopi kecil) & Energi drink**\n- Risiko: BBLR\n- Hitungan: Kopi 95mg, teh 47mg\n- Aman: Max 1 gelas kecil/hari\n\n**6. Alkohol 0 & Rokok / Vape 0**\n- Risiko: Fetal Alcohol Syndrome, BBLR, plasenta lepas\n\n**7. Jamu gendong tidak jelas, nanas muda & pepaya muda berlebihan**\n- Risiko: Kontraksi dini\n- Aman: Nanas matang 1-2 potong, pepaya matang\n\n**8. Ultra-processed tinggi garam, gula, soda**\n- Risiko: Hipertensi, preeklamsia, diabetes gestasional
+        """)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tabs[7]:
     st.markdown('<div class="custom-card">', unsafe_allow_html=True)
-    st.markdown("#### ❓ Dokter + AI FAQ")
-    st.markdown('<div class="disclaimer-box">⚠️ AI hanya info UMUM & EDUKASI, bukan diagnosis. Untuk kepastian, WAJIB konsultasi dokter. Tanda bahaya (perdarahan banyak, ketuban pecah, gerakan &lt;10x/12jam) segera IGD.</div>', unsafe_allow_html=True)
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = [{"role": "ai", "content": "Halo Bunda! Saya AI edukasi OBGYN. Tanya apa saja umum (mual, flek, vitamin, makanan, tanda lahiran)."}]
-    kb = {"mual": "Mual T1 normal karena hCG. Tips: porsi kecil 5-6x, biskuit bangun tidur.", "flek": "Flek sedikit bisa implantasi, tapi tetap kontrol.", "makanan": "Wajib protein 60-80gr, Fe+Vit C, Ca 1000mg. Hindari sushi mentah, setengah matang, merkuri tinggi.", "lahiran": "Tanda asli: 5-1-1, lendir darah, ketuban pecah. Segera ke RS jika 5-1-1.", "gerakan": "Mulai 18-22 minggu halus. T3 hitung 10 gerakan/12 jam. Jika <10, segera RS."}
-    def get_answer(q):
-        ql=q.lower()
-        for k,v in kb.items():
-            if k in ql: return v+"\n\nIni info umum ya."
-        return "Coba kata kunci: mual, flek, makanan, lahiran, gerakan. Ini info umum, konsultasi dokter ya."
-    for msg in st.session_state.chat_history:
-        with st.chat_message(msg["role"]): st.write(msg["content"])
-    if prompt := st.chat_input("Ketik pertanyaan umum..."):
-        st.session_state.chat_history.append({"role": "user", "content": prompt})
-        with st.chat_message("user"): st.write(prompt)
-        ans=get_answer(prompt)
-        with st.chat_message("assistant"): st.write(ans)
-        st.session_state.chat_history.append({"role": "assistant", "content": ans})
-        data["faq_tracker"].append({"q": prompt, "a": ans, "tgl": datetime.now().strftime("%Y-%m-%d %H:%M")})
-        save_all()
+    st.markdown("#### ❓ Dokter + AI - FAQ Lengkap Per Trimester (Versi Super Lengkap)")
+    st.markdown('<div class="disclaimer-box">⚠️ <b>DISCLAIMER:</b> Semua jawaban info UMUM & EDUKASI, bukan diagnosis pribadi. Untuk kepastian, WAJIB konsultasi dokter/bidan. Tanda bahaya (perdarahan banyak, ketuban pecah, gerakan &lt;10x/12jam, demam &gt;38.5, nyeri hebat) segera IGD.</div>', unsafe_allow_html=True)
+    sub1, sub2 = st.tabs(["📝 Tracker Konsultasi", "💬 FAQ Lengkap + AI Dokter"])
+    with sub1:
+        st.caption("Tulis pertanyaan sebelum kontrol, biar gak lupa pas ketemu dokter")
+        q = st.text_area("Pertanyaan", placeholder="Contoh: Apakah hasil lab saya normal?", key="q_tracker")
+        a = st.text_area("Jawaban dokter (isi setelah kontrol)", placeholder="...", key="a_tracker")
+        tgl = st.date_input("Tanggal", key="tgl_tracker")
+        if st.button("Simpan Q&A"):
+            data["faq_tracker"].append({"q": q, "a": a, "tgl": str(tgl)})
+            save_all()
+            st.success("Tersimpan!")
+        for item in reversed(data["faq_tracker"][-20:]):
+            st.markdown(f'<div style="background:#FFFCF8; border:1px solid #F0E6D8; border-radius:14px; padding:12px; margin-bottom:8px;"><b>Q:</b> {item["q"]}<br><b>A:</b> {item["a"]}<br><small>📅 {item["tgl"]}</small></div>', unsafe_allow_html=True)
+    with sub2:
+        st.markdown("##### ❓ FAQ Umum — Yang Selalu Ditanya Bumil (8 FAQ)")
+        faqs_umum = [
+            ("Apakah hasil lab saya normal?", "Hb normal >11 g/dL. Jika <11 anemia, tambah Fe. Gula puasa <92. Protein urine negatif normal, +1/+2 waspada preeklamsia. Gol darah penting antisipasi perdarahan."),
+            ("Apakah BB saya naik sesuai?", "T1 naik 1-2kg total wajar. T2-T3 0.35-0.5kg/minggu. Total tergantung BMI: Kurus 12.5-18kg, Normal 11.5-16kg, Gemuk 7-11.5kg, Obesitas 5-9kg. Naik >1kg/minggu + bengkak + tensi naik = kontrol."),
+            ("Vitamin apa yang perlu lanjut?", "T1: Folat+Vit D. T2: +Ca malam, Fe malam+Vit C, DHA siang. T3: Lanjut semua + Mg jika kram. Jangan stop tanpa dokter."),
+            ("Boleh HB (hubungan suami-istri)?", "Boleh jika tidak flek, ketuban tidak rembes, tidak plasenta previa, dokter tidak larang. Posisi woman on top, side lying nyaman. Hindari jika flek, kontraksi, ketuban rembes."),
+            ("Boleh naik pesawat?", "Aman sampai 28 minggu bebas, 28-36 butuh surat dokter, >36 ditolak maskapai. Hindari >4 jam, jalan tiap 1-2 jam, kaos kompresi, minum 250ml/jam."),
+            ("Kapan kontrol berikutnya?", "T1 4 mingguan, T2 4 mingguan + USG anomali 20-22 minggu, T3 awal 2 mingguan + CTG, T3 akhir mingguan."),
+            ("Apa yang harus diwaspadai?", "Perdarahan banyak, ketuban pecah banyak tidak bisa ditahan, gerakan <10x/12 jam, demam >38.5, muntah terus >24 jam, nyeri hebat, pusing + pandangan kabur + nyeri ulu hati."),
+            ("Boleh cat rambut, skincare?", "T1 hindari dulu. T2-T3 boleh cat tanpa amonia ventilasi baik. Hindari retinol, hydroquinone, formalin. Aman: hyaluronic acid, niacinamide, mineral sunscreen."),
+        ]
+        for q,a in faqs_umum:
+            with st.expander(f"• {q}"):
+                st.write(a)
+
+        st.markdown("##### 🌱 FAQ Trimester 1 (Minggu 0-13) - Awal Kehamilan (10 FAQ)")
+        faqs_t1 = [
+            ("Apakah mual berat sampai tidak bisa makan normal?", "Sangat umum di T1 karena hormon hCG naik. Tips: makan porsi kecil 5-6x, jangan biarkan lapar, biskuit kering sebelum bangun tidur, jahe hangat, hindari bau menyengat, vitamin B6 jika dokter saran. Waspada hyperemesis: jika muntah >5x/hari, tidak bisa minum >24 jam, BB turun >5%, urine pekat, segera ke IGD."),
+            ("Flek kecoklatan sedikit di celana, bahaya?", "Bisa karena implantasi (hari ke 6-12 setelah pembuahan) atau perubahan hormon. Tapi tetap harus kontrol USG untuk pastikan bukan ancaman keguguran atau hamil di luar rahim. Istirahat, hindari HB & angkat berat."),
+            ("Kapan detak jantung janin terdengar?", "Via USG transvaginal 6-7 minggu sudah terlihat, via USG perut 7-8 minggu. Via doppler 10-12 minggu. Jika di 8 minggu belum terlihat, dokter akan ulang 1 minggu lagi."),
+            ("Kenapa sering pipis & sembelit?", "Rahim membesar menekan kandung kemih + hormon progesteron melambatkan usus. Tips: jangan tahan pipis, minum air tetap 2.3L tapi kurangi 2 jam sebelum tidur, makan serat 28gr, jalan kaki."),
+            ("Kenapa mood swing, nangis tiba-tiba?", "Hormon estrogen & progesteron naik pesat. Wajar. Tips: tidur cukup 7-8 jam, cerita ke suami, journaling, prenatal yoga. Jika sedih terus >2 minggu, segera konsul."),
+            ("Kapan USG pertama yang ideal?", "6-8 minggu untuk konfirmasi lokasi (dalam rahim bukan di luar), jumlah janin, dan DJJ. 11-13 minggu USG NT untuk screening Down syndrome."),
+            ("Keputihan banyak, gatal?", "Keputihan putih susu tidak gatal & tidak bau = wajar karena hormon. Jika gatal, kuning hijau, bau amis, perih pipis, bisa infeksi yang harus diobati."),
+            ("Boleh kerja berat, naik motor, nyetir?", "Kerja ringan boleh, hindari angkat >10kg, berdiri >3 jam nonstop. Naik motor boleh jika jalan halus & tidak jauh."),
+            ("Boleh olahraga T1?", "Boleh ringan: jalan 20 menit, yoga T1, stretching. Hindari lari, lompat, angkat >5kg. Stop jika flek."),
+            ("Makanan paling penting T1?", "Fokus folat & protein: bayam, brokoli, alpukat, telur matang, ayam, lele. Hindari sushi mentah, setengah matang, alkohol."),
+        ]
+        for q,a in faqs_t1:
+            with st.expander(f"• {q}"):
+                st.write(a)
+
+        st.markdown("##### 🌸 FAQ Trimester 2 (14-27 Minggu) - Bulan Madu (10 FAQ)")
+        faqs_t2 = [
+            ("Kapan gerakan janin pertama terasa?", "Primigravida 18-22 minggu, multigravida 16-18 minggu. Rasanya seperti kupu-kupu, gelembung, kedutan halus. Jika sampai 24 minggu belum terasa, kontrol USG."),
+            ("Sakit punggung, kram kaki tengah malam, wasir?", "Rahim membesar, beban bertambah, kalsium kurang. Tips: bantal hamil di antara kaki saat miring kiri, stretching betis sebelum tidur, kalsium 1000mg malam, magnesium 300mg jika saran dokter."),
+            ("Posisi tidur terbaik?", "Miring kiri terbaik untuk aliran darah ke plasenta & janin. Miring kanan juga boleh. Hindari telentang lama >10 menit di T2 akhir-T3 karena rahim menekan vena cava."),
+            ("Perut sering kencang-kencang, apakah kontraksi palsu?", "Bisa Braxton Hicks: tidak teratur, hilang jika istirahat/minum air. Kontraksi asli: teratur, makin kuat, makin sering. Jika kencang teratur <34 minggu + nyeri punggung, segera kontrol."),
+            ("BB naik berapa ideal?", "Tergantung BMI awal: Kurus 12.5-18kg, Normal 11.5-16kg, Gemuk 7-11.5kg, Obesitas 5-9kg. T2 naik ~0.4kg/minggu."),
+            ("Ngidam & tidak suka bau tertentu?", "Wajar karena hormon. Turuti ngidam selama makanan aman. Jika ngidam non-makanan (es batu banyak, tanah, kapur) disebut pica → bisa anemia, cek Hb."),
+            ("Gusi berdarah, hidung mimisan, varises?", "Hormon bikin gusi sensitif & pembuluh darah melebar. Sikat gigi lembut, flossing, kontrol dokter gigi di T2."),
+            ("Boleh traveling jauh naik mobil?", "Boleh di T2 (paling nyaman). Tips: berhenti tiap 2 jam jalan 10 menit, pakai seatbelt di bawah perut, bawa camilan & air, bawa buku KIA."),
+            ("Boleh pijat hamil?", "Boleh >14 minggu terapis khusus bumil, posisi miring/duduk, hindari perut & titik tumit dalam."),
+            ("Boleh puasa?", "Konsul dokter. Jika sehat, BB janin normal, tidak diabetes/anemia berat, boleh dengan sahur buka lengkap, minum 2.5L."),
+        ]
+        for q,a in faqs_t2:
+            with st.expander(f"• {q}"):
+                st.write(a)
+
+        st.markdown("##### 🌙 FAQ Trimester 3 (28-40 Minggu) - Siap Lahiran (12 FAQ)")
+        faqs_t3 = [
+            ("Apa beda kontraksi asli vs palsu?", "PALSU: Tidak teratur, hilang istirahat/minum, hanya kencang di depan. ASLI: Teratur 10->5->3 menit, durasi 40-60 detik, makin kuat tidak hilang, ada lendir darah. Catat: jika 5-1-1 (5 menit sekali, 1 menit durasi, selama 1 jam) → ke RS."),
+            ("Kapan harus ke RS? Tanda gawat darurat?", "SEGERA KE IGD jika: kontraksi 5-1-1, ketuban pecah banyak tidak bisa ditahan, perdarahan merah segar banyak, gerakan janin <10x/12 jam, demam >38°C, nyeri kepala hebat + pandangan kabur + bengkak mendadak (preeklamsia), nyeri ulu hati hebat."),
+            ("Ketuban pecah warna hijau/kuning & bau, bahaya?", "Ketuban normal jernih agak putih. Jika hijau/kuning kental (meconium) → janin stress/BAB di dalam, kuning bau → infeksi. Segera ke RS, jangan tunggu kontraksi."),
+            ("Posisi bayi sungsang / lintang, bisa muter?", "Masih bisa muter sampai 34-36 minggu. Tips: posisi knee-chest 15 menit 3x/hari, moxibustion, musik di bawah perut. Dokter bisa coba versi luar (ECV) di 36-37 minggu. Jika tetap sungsang, diskusi SC vs normal sungsang."),
+            ("Boleh induksi alami? Jalan, squat, HB, makan nanas?", "Jalan kaki, squat, pelvic rocking boleh untuk bantu masuk panggul. HB boleh jika tidak kontraindikasi karena sperma mengandung prostaglandin. Stimulasi puting hati-hati. Nanas & kurma: bukti lemah, boleh secukupnya. Jangan jamu pelancar tidak jelas."),
+            ("Perineal massage perlu? Bagaimana caranya?", "Bermanfaat kurangi robekan jalan lahir. Mulai 34-35 minggu, tiap malam 5-10 menit dengan minyak VCO/kelapa, pijat perlahan area perineum ke arah bawah & samping."),
+            ("ASI belum keluar di hamil tua, normal?", "Normal. ASI pertama (kolostrum) baru banyak 2-3 hari setelah lahir. Yang penting IMD 1 jam pertama, skin to skin, hisapan bayi merangsang ASI."),
+            ("Bengkak kaki & tangan, kapan waspada?", "Bengkak ringan sore hari di kaki wajar T3. Kurangi garam, angkat kaki, minum air cukup. WASPADA preeklamsia jika: bengkak mendadak di wajah/tangan, BB naik >1kg/minggu, TD >140/90, pusing hebat, pandangan kabur, nyeri ulu hati → segera ke RS."),
+            ("Apa itu CTG & USG Doppler?", "CTG merekam DJJ & kontraksi, untuk cek kesejahteraan janin di T3, biasanya 36 minggu+. Doppler USG cek aliran darah plasenta & tali pusat, penting jika hipertensi, pertumbuhan kecil, lewat HPL."),
+            ("Baby blues & persiapan mental?", "70% ibu alami baby blues hari 3-10 setelah lahir: nangis, cemas, lelah. Dukungan suami penting: bagi tugas, tidur saat bayi tidur, makan bergizi. Jika sedih >2 minggu, segera cari bantuan profesional."),
+            ("Isi tas RS wajib?", "Ibu: KTP KK BPJS buku nikah KIA, baju kancing depan 3, pembalut nifas, underwear, bra, sandal, charger, camilan. Bayi: Baju 5, bedong 3, popok NB, topi, kaos kaki, tisu basah, selimut."),
+            ("Lewat HPL belum lahiran?", "HPL perkiraan, normal 37-42 minggu. 40 minggu belum tanda cek CTG + USG ketuban. 41 minggu diskusi induksi. 42 minggu biasanya induksi karena plasenta menua."),
+        ]
+        for q,a in faqs_t3:
+            with st.expander(f"• {q}"):
+                st.write(a)
+
+        st.divider()
+        st.markdown("### 👩‍⚕️ Tanya AI Dokter OBGYN - Jawaban Umum (Edukasi)")
+        st.markdown('<div class="disclaimer-box">💡 AI ini hanya untuk edukasi umum, bukan diagnosis pribadi. Ketik kata kunci seperti: mual, flek, kram, makanan, hb, pesawat, gerakan, lahiran, vitamin. Untuk kepastian, selalu konsultasi dokter langsung.</div>', unsafe_allow_html=True)
+        if "chat_history" not in st.session_state:
+            st.session_state.chat_history = [{"role": "ai", "content": "Halo Bunda! 👋 Saya AI edukasi OBGYN. Saya bisa bantu jawab pertanyaan UMUM seputar kehamilan. Misalnya: 'Apakah mual berat normal di T1?', 'Makanan apa yang harus dihindari?', 'Kapan harus ke RS tanda persalinan?'. Tulis pertanyaan Bunda di bawah ya. Ingat ini info umum, untuk kepastian tetap konsultasi dokter langsung."}]
+        kb = {
+            "mual": "Mual muntah di T1 sangat umum karena hormon hCG. Tips: makan porsi kecil 5-6x/hari, jangan biarkan lapar, biskuit kering sebelum bangun, jahe hangat. Jika tidak bisa makan/minum >24 jam, muntah >5x/hari, BB turun, urine pekat → segera ke IGD, risiko dehidrasi.",
+            "flek": "Flek kecoklatan sedikit di awal bisa karena implantasi atau perubahan hormon, tapi tetap harus kontrol USG untuk pastikan bukan ancaman keguguran atau hamil di luar rahim. Istirahat, hindari HB & angkat berat. Segera ke RS jika flek merah segar banyak, kram hebat.",
+            "kram": "Kram perut ringan & kram kaki malam hari umum di T2-T3 karena rahim membesar, kurang kalsium & magnesium. Tips: stretching betis sebelum tidur, minum air 2.3L, kalsium 1000mg malam, magnesium 300mg jika dokter saran.",
+            "makanan": "WAJIB: Protein 60-80gr (telur matang, ayam, lele/salmon 2x/mgg, tempe), Zat besi+Vit C (daging merah, hati ayam max 50gr/mgg, bayam+jeruk), Kalsium 1000mg (susu hamil 2 gelas), Serat (pepaya matang, pisang, oat), Air 2.3-2.5L. HINDARI: Sushi mentah, daging/telur setengah matang, susu mentah & keju lunak tidak pasteurisasi, ikan merkuri tinggi (hiu, todak, king mackerel, tuna bigeye), kafein >200mg, alkohol 0, rokok 0.",
+            "hb": "Hubungan suami-istri boleh jika tidak ada kontraindikasi: tidak ada flek/perdarahan, ketuban tidak rembes, tidak plasenta previa total, tidak riwayat prematur/keguguran berulang, dan dokter tidak melarang. Pilih posisi nyaman (miring, woman on top).",
+            "pesawat": "Umumnya aman sampai 28 minggu, 28-36 minggu butuh surat layak terbang. Tips: bawa surat dokter 7 hari sebelum terbang, pilih lorong, jalan tiap 1-2 jam, pakai kaos kompresi, minum 250ml/jam, hindari >4 jam. Hindari jika preeklamsia, ketuban pecah dini.",
+            "gerakan": "Gerakan pertama 18-22 minggu (primigravida) seperti kupu-kupu/gelembung. T2 akhir tendangan jelas. T3 hitung gerakan: 10 gerakan dalam 12 jam. Jika mendadak berkurang, <10x/12 jam, segera ke RS untuk CTG.",
+            "lahiran persalinan": "Tanda persalinan asli: kontraksi teratur 5 menit sekali, durasi 1 menit, selama 1 jam (5-1-1), makin kuat, ada lendir darah, ketuban pecah banyak tidak bisa ditahan. Segera ke RS jika 5-1-1, ketuban pecah, perdarahan, gerakan berkurang.",
+            "vitamin": "T1: Folat 400-800mcg pagi + Vit D 600 IU pagi + B6 jika mual (resep). T2: +Kalsium 1000mg malam jauh Fe, Fe 27mg malam+Vit C, DHA 200-300mg siang. T3: lanjut Fe+Ca+DHA, Vit K minggu akhir jika saran dokter, Magnesium malam. Selalu konsul dokter untuk dosis personal.",
+            "bengkak": "Bengkak kaki sore hari wajar T3. Tips: angkat kaki 15 menit tiap 2 jam, kurangi garam, minum air cukup, jangan berdiri lama. WASPADA jika bengkak mendadak wajah/tangan, BB naik >1kg/minggu, TD >140/90, pusing berat, pandangan kabur → risiko preeklamsia, segera ke IGD.",
+        }
+        def get_answer(q):
+            ql = q.lower()
+            for k,v in kb.items():
+                if k in ql:
+                    return v + "\n\nIni info umum ya Bunda, tiap kondisi bisa beda. Untuk kepastian diagnosis & penanganan, WAJIB konsultasi langsung ke dokter/bidan Bunda. Jika tanda bahaya, segera ke IGD."
+            return "Pertanyaan bagus Bunda. Secara umum tiap kehamilan berbeda. Coba pakai kata kunci: mual, flek, kram, makanan, hb, pesawat, gerakan, lahiran, vitamin, bengkak. Saya akan jawab info umumnya. Ingat ini edukasi umum saja, untuk kepastian konsultasi dokter ya."
+        for msg in st.session_state.chat_history:
+            with st.chat_message(msg["role"]):
+                st.write(msg["content"])
+        if prompt := st.chat_input("Ketik pertanyaan umum... misal: Apakah mual berat normal?"):
+            st.session_state.chat_history.append({"role": "user", "content": prompt})
+            with st.chat_message("user"):
+                st.write(prompt)
+            ans = get_answer(prompt)
+            with st.chat_message("assistant"):
+                st.write(ans)
+            st.session_state.chat_history.append({"role": "assistant", "content": ans})
+            data["faq_tracker"].append({"q": prompt, "a": ans, "tgl": datetime.now().strftime("%Y-%m-%d %H:%M")})
+            save_all()
+        st.markdown("**Coba tanya cepat:**")
+        c1,c2,c3,c4 = st.columns(4)
+        if c1.button("Mual berat T1?"): st.session_state.chat_history.append({"role": "user", "content": "Apakah mual berat normal di trimester 1?"}); st.rerun()
+        if c2.button("Boleh HB?"): st.session_state.chat_history.append({"role": "user", "content": "Bolehkah hubungan suami istri saat hamil?"}); st.rerun()
+        if c3.button("Tanda ke RS?"): st.session_state.chat_history.append({"role": "user", "content": "Kapan harus ke RS tanda persalinan?"}); st.rerun()
+        if c4.button("Makanan hindari?"): st.session_state.chat_history.append({"role": "user", "content": "Makanan apa yang harus dihindari ibu hamil?"}); st.rerun()
+
     st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown('<div style="text-align:center; font-family:Caveat; font-size:18px; color:#9B8B7A; margin-top:30px;">"Setiap tendangan kecil adalah cerita besar" 🌸</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align:center; font-family:Caveat; font-size:18px; color:#9B8B7A; margin-top:30px;">"Setiap tendangan kecil adalah cerita besar" 🌸<br><small style="font-family:Poppins; font-size:11px;">Bumil Planner 280 Days — DIY Edition • Dibuat dengan cinta untuk ibu hebat • 2026</small></div>', unsafe_allow_html=True)
