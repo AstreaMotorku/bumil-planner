@@ -28,15 +28,141 @@ def default_data():
         "bb_ibu": [{"minggu": m, "bb": None, "kenaikan": 0.0, "status": "Normal"} for m in range(4, 41)],
         "bb_janin": [{"minggu": m, "est_bb": None, "panjang": None, "kategori": "Normal"} for m in range(20, 41)],
         "todo": {
-            "T1 - Bulan 1 (Minggu 1-4)": [("Tes pack & catat HPHT", "Pagi hari", False), ("Hitung HPL HPHT+280", "", False), ("Mulai asam folat 400-800mcg", "Setelah makan", False), ("Stop rokok/alkohol/vape", "0 toleransi", False), ("Cek obat aman bumil?", "Tanya dokter", False), ("Daftar dokter/bidan & buku KIA", "", False), ("Buat folder dokumen KK KTP BPJS", "Fotokopi 3x", False), ("Cek BPJS/asuransi", "", False), ("Tidur 7-8 jam", "Miring kiri", False), ("Air 2.3L/hari", "", False)],
-            "T1 - Bulan 2 (Minggu 5-8)": [("USG pertama kantung & DJJ", "6-8 minggu", False), ("Lab darah lengkap", "Hb, HIV, HepB", False), ("Cek TSH tiroid", "", False), ("Atasi mual porsi kecil", "Biskuit bangun tidur", False), ("Beli bra hamil", "Tanpa kawat", False), ("Catat BB mingguan", "Senin pagi", False), ("Hindari sushi mentah", "", False), ("Prenatal yoga 15 menit", "", False)],
-            "T1 - Bulan 3 (Minggu 9-13)": [("USG NT 11-13 / NIPT", "", False), ("Konsultasi hasil lab", "", False), ("Atur cuti hamil", "", False), ("Minyak anti stretch mark", "", False), ("List pertanyaan dokter T1", "", False), ("Financial plan awal", "", False), ("Bantal hamil", "", False), ("Hindari retinol", "", False)],
-            "T2 - Bulan 4 (14-17)": [("USG anatomi awal", "", False), ("Kalsium 1000mg & zat besi 27mg", "Jika saran dokter", False), ("Kelas hamil", "", False), ("Skincare bumil-friendly", "No retinol", False), ("Tidur miring kiri", "", False), ("Baju hamil 2-3 stel", "", False), ("Jalan 20-30 menit", "", False), ("Ngobrol dengan janin", "", False)],
-            "T2 - Bulan 5 (18-22)": [("USG anomali detail 20 minggu WAJIB", "", False), ("Cek Hb & gula puasa", "", False), ("Catat gerakan janin", "Quickening", False), ("Riset pompa ASI & bouncer", "", False), ("Brainstorm 10 nama bayi", "", False), ("Moodboard kamar bayi", "", False), ("Planning foto maternity", "", False)],
-            "T2 - Bulan 6 (23-27)": [("TTGO 24-28 minggu", "", False), ("Vaksin Tdap & flu", "Konsul dokter", False), ("Cek plasenta", "", False), ("Senam kegel 3x10", "", False), ("Edukasi ASI", "", False), ("Draft birth plan", "", False), ("Cicil perlengkapan WAJIB 50%", "", False)],
-            "T3 - Bulan 7 (28-31)": [("USG pertumbuhan & doppler", "", False), ("Cek posisi kepala", "", False), ("Packing tas RS 70%", "", False), ("Kelas napas & hypnobirthing", "", False), ("Berkas KTP KK buku nikah BPJS", "Map khusus", False), ("Beli gendongan SSC", "", False), ("Finalisasi cuti", "", False)],
-            "T3 - Bulan 8 (32-36)": [("Kontrol 2 mingguan", "", False), ("CTG & cek preeklamsia", "", False), ("Finalisasi kamar & cuci baju bayi", "", False), ("Belajar mandikan bedong gendong", "", False), ("Sterilisasi botol", "", False), ("Kontak darurat RS bidan driver", "Tempel kulkas", False), ("Pengaman rumah", "", False)],
-            "T3 - Bulan 9 (37-40)": [("Kontrol mingguan", "", False), ("Cek panggul", "", False), ("Packing tas RS 100%", "Baju ibu 3 bayi 5 dokumen", False), ("Perineal massage", "", False), ("Latihan napas 4-7-8", "", False), ("Siaga tanda persalinan 5-1-1", "", False), ("Rute tercepat RS", "", False), ("Afirmasi positif", "", False), ("Stok frozen food", "", False)],
+            "T1 - Bulan 1 (Minggu 1-4)": [
+                ("Tes pack & catat HPHT", "Pagi hari, urine pertama untuk hasil akurat", False),
+                ("Hitung HPL HPHT+280", "Gunakan kalkulator online atau kalender", False),
+                ("Mulai asam folat 400-800mcg", "Penting mencegah cacat tabung saraf, setelah makan", False),
+                ("Stop rokok/alkohol/vape", "0 toleransi untuk kesehatan janin", False),
+                ("Cek obat aman bumil?", "Tanya dokter sebelum minum obat bebas", False),
+                ("Daftar dokter/bidan & buku KIA", "Pilih faskes terdekat yang nyaman", False),
+                ("Buat folder dokumen KK KTP BPJS", "Fotokopi 3x untuk persiapan admin RS", False),
+                ("Cek BPJS/asuransi", "Pastikan aktif dan pelajari coveragenya", False),
+                ("Tidur 7-8 jam", "Miring kiri lebih baik untuk aliran darah", False),
+                ("Air 2.3L/hari", "Bawa botol minum ke mana-mana", False),
+                ("Kurangi kafein", "Maksimal 1 gelas kopi/teh sehari", False),
+                ("Hindari daging/ikan mentah", "Risiko listeria dan bakteri berbahaya", False),
+                ("Prenatal vitamin tambahan", "Konsul dokter untuk vitamin D dan lainnya", False)
+            ],
+            "T1 - Bulan 2 (Minggu 5-8)": [
+                ("USG pertama kantung & DJJ", "6-8 minggu, pastikan janin di dalam rahim", False),
+                ("Lab darah lengkap", "Hb, HIV, HepB, Sifilis, Golongan Darah", False),
+                ("Cek TSH tiroid", "Penting untuk perkembangan otak janin awal", False),
+                ("Atasi mual porsi kecil", "Makan 5-6x porsi kecil, biskuit bangun tidur", False),
+                ("Beli bra hamil", "Tanpa kawat, bahan katun menyerap keringat", False),
+                ("Catat BB mingguan", "Setiap Senin pagi saat perut kosong", False),
+                ("Hindari sushi mentah", "Hanya makan yang matang sempurna", False),
+                ("Prenatal yoga 15 menit", "Stretching ringan di rumah", False),
+                ("Istirahat cukup siang hari", "Tidur siang 30-45 menit jika lelah", False),
+                ("Cek produk skincare", "Hindari retinol, BHA, dan paraben", False),
+                ("Minum jahe hangat", "Untuk meredakan mual dan kembung", False),
+                ("Jaga kebersihan gigi", "Sikat 2x sehari, hindari gusi berdarah", False),
+                ("Hindari angkat beban berat", "Minta bantuan untuk barang >5kg", False)
+            ],
+            "T1 - Bulan 3 (Minggu 9-13)": [
+                ("USG NT 11-13 / NIPT", "Skrining kelainan kromosom, opsional tapi penting", False),
+                ("Konsultasi hasil lab", "Bawa semua hasil ke obgyn di kunjungan berikutnya", False),
+                ("Atur cuti hamil", "Pelajari hak cuti di kantor dari sekarang", False),
+                ("Minyak anti stretch mark", "Oleskan di perut, paha, dan payudara 2x sehari", False),
+                ("List pertanyaan dokter T1", "Siapkan catatan di HP agar tidak lupa", False),
+                ("Financial plan awal", "Buat tabungan khusus biaya lahiran", False),
+                ("Beli bantal hamil", "Bentuk U atau C untuk kenyamanan tidur", False),
+                ("Hindari aktivitas ekstrem", "Stop olahraga high-impact sementara", False),
+                ("Pilih baju hamil longgar", "Cari celana dengan karet perut khusus", False),
+                ("Sering cuci tangan", "Cegah infeksi virus seperti CMV/Tokso", False),
+                ("Konsumsi kalsium alami", "Susu pasteurisasi, keju matang, yoghurt", False),
+                ("Cek berat badan", "Pastikan kenaikan T1 tidak terlalu drastis", False),
+                ("Umumkan kehamilan", "Opsional, setelah lewat trimester pertama yang rawan", False)
+            ],
+            "T2 - Bulan 4 (Minggu 14-17)": [
+                ("USG anatomi awal", "Cek struktur janin secara umum", False),
+                ("Kalsium 1000mg & zat besi 27mg", "Jika saran dokter, pisahkan minumnya 2 jam", False),
+                ("Kelas hamil online", "Ikuti webinar edukasi kehamilan", False),
+                ("Skincare bumil-friendly", "Pastikan produk yang dipakai aman no retinol", False),
+                ("Tidur miring kiri", "Gunakan bantal penyangga di antara kaki", False),
+                ("Baju hamil 2-3 stel", "Siapkan untuk perut yang mulai membesar", False),
+                ("Jalan 20-30 menit", "Jalan santai pagi atau sore hari", False),
+                ("Ngobrol dengan janin", "Ajak bicara, pendengaran janin mulai berkembang", False),
+                ("Makan serat 25-30gr", "Sayur hijau, buah pepaya matang untuk cegah sembelit", False),
+                ("Hindari tidur telentang lama", "Agar aliran darah ke rahim tidak terhambat", False),
+                ("Perawatan gigi", "Ke dokter gigi untuk pembersihan karang gigi", False),
+                ("Cek asuransi newborn", "Persiapkan asuransi tambahan untuk bayi jika ada", False),
+                ("Senam kegel dasar", "Mulai latih otot dasar panggul 3x10 repetisi", False)
+            ],
+            "T2 - Bulan 5 (Minggu 18-22)": [
+                ("USG anomali detail 20 minggu WAJIB", "Screening kelainan organ bawaan 20-22 minggu", False),
+                ("Cek Hb & gula puasa", "Skrining anemia T2 dan kesiapan tubuh", False),
+                ("Catat gerakan janin", "Quickening, rasakan tendangan halus pertama", False),
+                ("Riset pompa ASI & bouncer", "Bandingkan merk dan harga di e-commerce", False),
+                ("Brainstorm 10 nama bayi", "Buat daftar nama laki-laki dan perempuan", False),
+                ("Moodboard kamar bayi", "Cari inspirasi dekorasi di Pinterest", False),
+                ("Planning foto maternity", "Booking fotografer jika berencana foto", False),
+                ("Konsumsi DHA 200-300mg", "Penting untuk perkembangan otak janin", False),
+                ("Mulai pijat kehamilan", "Boleh dilakukan >14 minggu oleh terapis khusus", False),
+                ("Cek keputihan", "Bila bau/gatal segera lapor dokter", False),
+                ("Latihan relaksasi", "Meditasi 10 menit untuk tenangkan pikiran", False),
+                ("Hindari berdiri terlalu lama", "Cegah varises dan kaki bengkak", False),
+                ("Periksa tekanan darah", "Waspada hipertensi kehamilan / preeklamsia ringan", False)
+            ],
+            "T2 - Bulan 6 (Minggu 23-27)": [
+                ("TTGO 24-28 minggu", "Tes toleransi glukosa untuk cek diabetes gestasional", False),
+                ("Vaksin Tdap & flu", "Konsul dokter, penting untuk antibodi janin", False),
+                ("Cek plasenta", "USG pastikan tidak menutupi jalan lahir / plasenta previa", False),
+                ("Senam kegel 3x10", "Rutin tiap hari untuk perkuat otot panggul", False),
+                ("Edukasi ASI", "Nonton video pelekatan dan posisi menyusui yang benar", False),
+                ("Draft birth plan", "Tulis harapan proses persalinan untuk didiskusikan", False),
+                ("Cicil perlengkapan WAJIB 50%", "Beli baju newborn, popok, alat mandi", False),
+                ("Latihan senam hamil", "Ikuti kelas atau video panduan senam hamil", False),
+                ("Kurangi garam", "Cegah kaki bengkak yang berlebihan", False),
+                ("Stretching punggung bawah", "Lakukan cat-cow pose perlahan", False),
+                ("Cek persiapan finansial", "Evaluasi tabungan lahiran di pertengahan T2", False),
+                ("Ikut komunitas ibu hamil", "Gabung grup WA/FB untuk sharing", False),
+                ("Sering angkat kaki", "Tinggikan kaki saat duduk istirahat 15 menit", False)
+            ],
+            "T3 - Bulan 7 (Minggu 28-31)": [
+                ("USG pertumbuhan & doppler", "Cek berat janin dan aliran darah plasenta", False),
+                ("Cek posisi kepala", "Pastikan kepala mulai di bawah / tidak sungsang", False),
+                ("Packing tas RS 70%", "Siapkan tas, cicil masukin barang perlengkapan ibu", False),
+                ("Kelas napas & hypnobirthing", "Belajar teknik napas kurangi sakit kontraksi", False),
+                ("Berkas KTP KK buku nikah BPJS", "Jadikan 1 map khusus, fotokopi masing-masing 5x", False),
+                ("Beli gendongan SSC", "Pilih yang ergonomic M-shape support", False),
+                ("Finalisasi cuti", "Serahkan form cuti hamil ke HRD kantor", False),
+                ("Lanjut kalsium & zat besi", "Sangat penting di trimester 3 untuk tulang janin", False),
+                ("Cek kontraksi palsu", "Braxton Hicks, bedakan dengan kontraksi asli", False),
+                ("Cuci pakaian bayi", "Gunakan deterjen khusus bayi, tanpa pewangi keras", False),
+                ("Susun rak/lemari bayi", "Rapikan baju dan popok bayi di kamar", False),
+                ("Latihan panggul", "Gunakan birthing ball untuk goyang panggul ringan", False),
+                ("Kenali tanda persalinan", "Pahami beda air ketuban, keputihan, dan urine", False)
+            ],
+            "T3 - Bulan 8 (Minggu 32-36)": [
+                ("Kontrol 2 mingguan", "Jadwal ke obgyn jadi lebih sering", False),
+                ("CTG & cek preeklamsia", "Cek detak jantung janin dan tensi/protein urine", False),
+                ("Finalisasi kamar bayi", "Pastikan sirkulasi udara baik, pasang kelambu", False),
+                ("Belajar mandikan bedong gendong", "Latihan pakai boneka bersama suami", False),
+                ("Sterilisasi botol", "Cuci bersih dan sterilkan alat pompa & botol", False),
+                ("Kontak darurat RS bidan driver", "Tempel di kulkas agar mudah dilihat", False),
+                ("Pengaman rumah", "Cek keamanan lingkungan, nomor satpam", False),
+                ("Perineal massage", "Mulai pijat area perineum dengan minyak VCO", False),
+                ("Hitung gerakan janin", "Pastikan minimal 10 gerakan dalam 12 jam", False),
+                ("Kurangi perjalanan jauh", "Hindari keluar kota jika tidak mendesak", False),
+                ("Posisi sujud", "Knee-chest pose 15 menit untuk bantu bayi masuk panggul", False),
+                ("Diskusi SC vs Normal", "Bicarakan opsi persalinan dengan dokter", False),
+                ("Afirmasi positif harian", "Dengarkan audio hypnobirthing tiap malam", False)
+            ],
+            "T3 - Bulan 9 (Minggu 37-40)": [
+                ("Kontrol mingguan", "Wajib cek ke dokter setiap minggu di bulan 9", False),
+                ("Cek panggul", "Pemeriksaan dalam jika diperlukan oleh dokter", False),
+                ("Packing tas RS 100%", "Baju ibu 3 set, baju bayi 5 set, dokumen lengkap, masukkan ke mobil", False),
+                ("Latihan napas 4-7-8", "Praktikkan teknik napas saat perut kencang", False),
+                ("Siaga tanda persalinan 5-1-1", "Kontraksi tiap 5 menit, durasi 1 menit, selama 1 jam", False),
+                ("Rute tercepat RS", "Survei jalan alternatif saat macet ke RS", False),
+                ("Stok frozen food", "Siapkan makanan mudah panaskan untuk minggu awal postpartum", False),
+                ("Cek ketuban rembes", "Pakai pantyliner untuk cek jika ada cairan jernih keluar", False),
+                ("Rileks & jalan pagi", "Jalan kaki 30 menit setiap hari bantu bayi turun", False),
+                ("Hubungan suami istri", "Boleh jika dokter setuju, prostaglandin bantu lunakkan serviks", False),
+                ("Pijat oksitosin", "Minta suami pijat punggung stimulasi hormon persalinan", False),
+                ("Cukur area intim", "Opsional, rapikan bulu kemaluan untuk kebersihan", False),
+                ("Lepas cincin perhiasan", "Simpan perhiasan di rumah, antisipasi bengkak", False)
+            ],
         },
         "newborn": {
             "WAJIB PUNYA": [{"nama": "Popok kain 12pcs + Perlak 2", "qty": 1, "harga": 0, "link": "", "ket": "Katun", "done": False}],
@@ -250,6 +376,19 @@ with tabs[2]:
 
 with tabs[3]:
     st.markdown("#### ✅ To-Do List Super Lengkap")
+
+    total_all = sum(len(tasks) for tasks in data["todo"].values())
+    selesai_all = sum(len([t for t in tasks if t[2]]) for tasks in data["todo"].values())
+
+    st.progress(selesai_all / total_all if total_all > 0 else 0)
+    st.markdown(f"**Progress Keseluruhan:** {selesai_all} / {total_all} tugas selesai")
+
+    with st.expander("🔄 Reset To-Do ke Versi Super Detail Terbaru"):
+        if st.button("Reset To-Do"):
+            data["todo"] = default_data()["todo"]
+            save_all()
+            st.rerun()
+
     for bulan, tasks in data["todo"].items():
         selesai = len([t for t in tasks if t[2]])
         total = len(tasks)
@@ -260,10 +399,11 @@ with tabs[3]:
                 checked = c1.checkbox("", value=done, key=f"{bulan}_{idx}_todo", label_visibility="collapsed")
                 with c2:
                     st.markdown(f"**{nama}**")
-                    st.caption(ket)
+                    st.markdown(f"<span style='font-size:12px; color:#9B8B7A;'>{ket}</span>", unsafe_allow_html=True)
                 if checked != done:
                     data["todo"][bulan][idx] = (nama, ket, checked)
                     save_all()
+                    st.rerun()
             c1,c2 = st.columns([0.85,0.15])
             new_t = c1.text_input("Tambah", key=f"new_{bulan}", placeholder="Tugas baru...", label_visibility="collapsed")
             if c2.button("Tambah", key=f"btn_{bulan}") and new_t:
