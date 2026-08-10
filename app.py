@@ -43,7 +43,17 @@ def default_data():
             "LUMAYAN PENTING": [{"nama": "Pompa ASI elektrik", "qty": 1, "harga": 0, "link": "", "ket": "", "done": False}],
             "TIDAK URGENT": [{"nama": "Stroller + Car seat", "qty": 1, "harga": 0, "link": "", "ket": "", "done": False}]
         },
-        "budget": [{"kategori": "Kontrol/USG", "nama": "USG + dokter", "estimasi": 500000, "aktual": 0, "lunas": False}],
+        "budget": [
+            {"kategori": "Kontrol/USG", "nama": "Kontrol Bulanan", "estimasi": 5000000, "aktual": 0, "lunas": False},
+            {"kategori": "Vitamin", "nama": "Vitamin & Suplemen", "estimasi": 2000000, "aktual": 0, "lunas": False},
+            {"kategori": "Baju Hamil", "nama": "Pakaian Hamil", "estimasi": 1000000, "aktual": 0, "lunas": False},
+            {"kategori": "Bayi Wajib", "nama": "Popok, baju, alat mandi", "estimasi": 5000000, "aktual": 0, "lunas": False},
+            {"kategori": "Bayi Lumayan", "nama": "Stroller, Car seat", "estimasi": 4500000, "aktual": 0, "lunas": False},
+            {"kategori": "Lahiran RS", "nama": "Biaya Persalinan", "estimasi": 20000000, "aktual": 0, "lunas": False},
+            {"kategori": "Aqiqah", "nama": "Biaya Aqiqah", "estimasi": 3000000, "aktual": 0, "lunas": False},
+            {"kategori": "Lainnya", "nama": "Syukuran", "estimasi": 2000000, "aktual": 0, "lunas": False},
+            {"kategori": "Lainnya", "nama": "Dana Darurat", "estimasi": 0, "aktual": 0, "lunas": False}
+        ],
         "faq_tracker": []
     }
 
@@ -355,9 +365,41 @@ with tabs[4]:
 with tabs[5]:
     st.markdown('<div class="custom-card">', unsafe_allow_html=True)
     st.markdown("#### 💰 Budget")
-    edited = st.data_editor(data["budget"], num_rows="dynamic", use_container_width=True, key="budget_bb")
+
+    df_budget = pd.DataFrame(data["budget"])
+    edited = st.data_editor(
+        df_budget,
+        num_rows="dynamic",
+        use_container_width=True,
+        key="budget_bb",
+        column_config={
+            "kategori": st.column_config.SelectboxColumn("Kategori", options=["Kontrol/USG", "Vitamin", "Baju Hamil", "Bayi Wajib", "Bayi Lumayan", "Lahiran RS", "Aqiqah", "Lainnya"]),
+            "nama": st.column_config.TextColumn("Nama Item"),
+            "estimasi": st.column_config.NumberColumn("Estimasi", format="Rp %d"),
+            "aktual": st.column_config.NumberColumn("Aktual", format="Rp %d"),
+            "lunas": st.column_config.CheckboxColumn("Lunas")
+        }
+    )
+
+    total_estimasi = edited["estimasi"].sum() if "estimasi" in edited.columns else 0
+    total_aktual = edited["aktual"].sum() if "aktual" in edited.columns else 0
+    sisa = total_estimasi - total_aktual
+    lunas_count = edited["lunas"].sum() if "lunas" in edited.columns else 0
+    total_items = len(edited)
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Total Estimasi", f"Rp {total_estimasi:,.0f}")
+    c2.metric("Total Aktual Terpakai", f"Rp {total_aktual:,.0f}")
+    c3.metric("Sisa / Lebih", f"Rp {sisa:,.0f}")
+    c4.metric("Item Lunas", f"{lunas_count} / {total_items}")
+
+    if total_estimasi > 0:
+        progress = min(total_aktual / total_estimasi, 1.0)
+        st.progress(progress, text=f"Progress Terpakai: {progress*100:.1f}%")
+
     if st.button("Simpan Budget"):
-        data["budget"] = edited; save_all()
+        data["budget"] = edited.to_dict(orient="records")
+        save_all()
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tabs[6]:
